@@ -256,12 +256,14 @@ const Portfolio = () => {
               <button
                 onClick={() => scrollToSection("projects")}
                 className="btn btn-primary"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 View My Work
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="btn btn-outline"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Get In Touch
               </button>

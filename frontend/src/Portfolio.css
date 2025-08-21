@@ -95,6 +95,7 @@ html {
 }
 
 .nav-link {
+  font-family: 'Poppins', sans-serif;
   color: #d1d5db;
   text-decoration: none;
   text-transform: capitalize;
