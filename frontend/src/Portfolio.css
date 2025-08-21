@@ -56,7 +56,6 @@ html {
 /* Navigation */
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.2);
@@ -230,6 +229,34 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.hero-title .blinking-cursor {
+  -webkit-text-fill-color: #F4631E;
+  color: #F4631E;
+  background: none;
+}
+
+.blinking-cursor {
+  -webkit-text-fill-color: #F4631E;
+  color: #F4631E;
+  background: none;
+  animation: blink 1s steps(1) infinite;
+  font-weight: bold;
+  font-size: inherit;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
   }
 }
 

@@ -130,7 +130,7 @@ const Portfolio = () => {
       title: "Catering Management System",
       description:
         "Full-stack catering management system using React, Node.js, and MongoDB. Features include food reservation, dynamic pricing per pax, admin menu control, and responsive UI.",
-      image: "../public/samp_cms.png",
+      image: "/samp_cms.png",
       tech: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/mrvndgl/catering-management-system",
     },
@@ -138,7 +138,7 @@ const Portfolio = () => {
       title: "TMATES Dance Crew",
       description:
         "TMATES is a passionate dance crew known for high-energy performances, creative choreography, and strong teamwork on and off stage.",
-      image: "../public/samp-tmates.png",
+      image: "/samp-tmates.png",
       tech: ["React"],
       github: "https://github.com/mrvndgl/tmates",
       demo: "https://superb-empanada-5bc26f.netlify.app/",
@@ -147,7 +147,7 @@ const Portfolio = () => {
       title: "But's Printing Shop",
       description:
         "Responsive printing shop website using React and CSS, showcasing offered services and product catalog with a modern UI.",
-      image: "../public/samp_bps.png",
+      image: "/samp_bps.png",
       tech: ["HTML", "CSS", "React"],
       github: "https://github.com/mrvndgl/butsprintingshop",
     },
@@ -155,7 +155,7 @@ const Portfolio = () => {
       title: "Shake Eat",
       description:
         "A gamified food decision app UI in Figma that helps groups choose dining spots based on preferences, budget, and location.",
-      image: "../public/samp-shakeeat.png",
+      image: "/samp-shakeeat.png",
       tech: ["Figma"],
       demo: "https://www.figma.com/design/B9LP3r5AT9lKhWkOA0joh2/SHAKE-EAT?node-id=0-1&t=omLkoOI3sHUYNU3P-1",
     },
@@ -244,7 +244,10 @@ const Portfolio = () => {
 
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">{heroText}</h1>
+            <h1 className="hero-title">
+              {heroText}
+              <span className="blinking-cursor">|</span>
+            </h1>
             <p className="hero-subtitle">
               Junior Web Developer & UI/UX Enthusiast building meaningful and
               user-friendly digital experiences
@@ -267,7 +270,7 @@ const Portfolio = () => {
 
           <div className="hero-image">
             <div className="hero-image-wrapper">
-              <img src="../public/marvin.png" alt="Marvin" />
+              <img src="/marvin.png" alt="Marvin" />
             </div>
           </div>
         </div>
