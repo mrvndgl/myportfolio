@@ -18,6 +18,7 @@ const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [visibleSections, setVisibleSections] = useState(new Set(["home"]));
+  const [menuBtnPressed, setMenuBtnPressed] = useState(false);
   const [heroText, setHeroText] = useState("");
 
   const sectionsRef = useRef({});
@@ -196,9 +197,8 @@ const Portfolio = () => {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`nav-link ${
-                    activeSection === item.id ? "active" : ""
-                  }`}
+                  className={`nav-link ${activeSection === item.id ? "active" : ""
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -208,8 +208,13 @@ const Portfolio = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`mobile-menu-btn${menuBtnPressed ? " pressed" : ""}`}
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen);
+            }}
+            onPointerDown={() => setMenuBtnPressed(true)}
+            onPointerUp={() => setMenuBtnPressed(false)}
+            onPointerLeave={() => setMenuBtnPressed(false)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -268,7 +273,19 @@ const Portfolio = () => {
         </div>
 
         <div className="scroll-indicator">
-          <ChevronDown size={32} color="#F4631E" />
+          <button
+            className="scroll-indicator-btn"
+            onClick={() => scrollToSection("about")}
+            aria-label="Scroll to About Me"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+            }}
+          >
+            <ChevronDown size={32} color="#F4631E" />
+          </button>
         </div>
       </section>
 
@@ -322,9 +339,8 @@ const Portfolio = () => {
       <section
         id="projects"
         ref={(el) => (sectionsRef.current.projects = el)}
-        className={`section projects-section ${
-          visibleSections.has("projects") ? "visible" : ""
-        }`}
+        className={`section projects-section ${visibleSections.has("projects") ? "visible" : ""
+          }`}
       >
         <div className="container">
           <h2 className="section-title">Featured Projects</h2>
@@ -376,9 +392,8 @@ const Portfolio = () => {
       <section
         id="contact"
         ref={(el) => (sectionsRef.current.contact = el)}
-        className={`section contact-section ${
-          visibleSections.has("contact") ? "visible" : ""
-        }`}
+        className={`section contact-section ${visibleSections.has("contact") ? "visible" : ""
+          }`}
       >
         <div className="container">
           <div className="contact-content">
