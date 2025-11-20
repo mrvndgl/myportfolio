@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import anime from "animejs";
 import {
   Menu,
   X,
@@ -22,7 +23,11 @@ const Portfolio = () => {
   const [heroText, setHeroText] = useState("");
 
   const sectionsRef = useRef({});
-  const fullText = "Hi! I am Marvin";
+  const heroImageRef = useRef(null);
+  const heroButtonsRef = useRef(null);
+  const projectCardsRef = useRef([]);
+  const skillCardsRef = useRef([]);
+  const fullText = "Hi! I am John";
 
   // Smooth scroll function
   const scrollToSection = (sectionId) => {
@@ -35,6 +40,33 @@ const Portfolio = () => {
     }
     setIsMenuOpen(false);
   };
+
+  // Hero entrance animations
+  useEffect(() => {
+    // Animate hero image
+    if (heroImageRef.current) {
+      anime({
+        targets: heroImageRef.current,
+        opacity: [0, 1],
+        scale: [0.8, 1],
+        duration: 1200,
+        easing: "easeOutElastic(1, .8)",
+        delay: 500,
+      });
+    }
+
+    // Animate hero buttons
+    if (heroButtonsRef.current) {
+      anime({
+        targets: heroButtonsRef.current.children,
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 800,
+        easing: "easeOutQuad",
+        delay: anime.stagger(150, { start: 1500 }),
+      });
+    }
+  }, []);
 
   // Typing animation for hero title
   useEffect(() => {
@@ -102,6 +134,50 @@ const Portfolio = () => {
           if (entry.isIntersecting) {
             const sectionId = entry.target.id;
             setVisibleSections((prev) => new Set([...prev, sectionId]));
+
+            // Trigger anime.js animations when sections become visible
+            if (sectionId === "projects") {
+              anime({
+                targets: projectCardsRef.current,
+                opacity: [0, 1],
+                translateY: [50, 0],
+                scale: [0.9, 1],
+                duration: 800,
+                easing: "easeOutExpo",
+                delay: anime.stagger(150),
+              });
+            }
+
+            if (sectionId === "about") {
+              anime({
+                targets: ".about-text p",
+                opacity: [0, 1],
+                translateX: [-30, 0],
+                duration: 800,
+                easing: "easeOutQuad",
+                delay: anime.stagger(200),
+              });
+
+              anime({
+                targets: ".social-links a",
+                opacity: [0, 1],
+                scale: [0, 1],
+                duration: 600,
+                easing: "easeOutBack",
+                delay: anime.stagger(100, { start: 600 }),
+              });
+            }
+
+            if (sectionId === "contact") {
+              anime({
+                targets: ".contact-content > *",
+                opacity: [0, 1],
+                translateY: [40, 0],
+                duration: 800,
+                easing: "easeOutQuad",
+                delay: anime.stagger(150),
+              });
+            }
           }
         });
       },
@@ -117,6 +193,17 @@ const Portfolio = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Add hover animation for project cards
+  const handleProjectCardHover = (e, isEntering) => {
+    anime({
+      targets: e.currentTarget,
+      scale: isEntering ? 1.03 : 1,
+      translateY: isEntering ? -8 : 0,
+      duration: 300,
+      easing: "easeOutQuad",
+    });
+  };
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -252,7 +339,7 @@ const Portfolio = () => {
               Junior Web Developer & UI/UX Enthusiast building meaningful and
               user-friendly digital experiences
             </p>
-            <div className="hero-buttons">
+            <div className="hero-buttons" ref={heroButtonsRef}>
               <button
                 onClick={() => scrollToSection("projects")}
                 className="btn btn-primary"
@@ -270,9 +357,9 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="hero-image">
+          <div className="hero-image" ref={heroImageRef}>
             <div className="hero-image-wrapper">
-              <img src="/marvin.png" alt="Marvin" />
+              <img src="/John.jpg" alt="John" />
             </div>
           </div>
         </div>
@@ -351,7 +438,13 @@ const Portfolio = () => {
           <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project-card">
+              <div
+                key={index}
+                className="project-card"
+                ref={(el) => (projectCardsRef.current[index] = el)}
+                onMouseEnter={(e) => handleProjectCardHover(e, true)}
+                onMouseLeave={(e) => handleProjectCardHover(e, false)}
+              >
                 <img src={project.image} alt={project.title} />
                 <div className="project-content">
                   <h3>{project.title}</h3>

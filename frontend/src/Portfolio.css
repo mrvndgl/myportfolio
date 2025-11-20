@@ -323,9 +323,25 @@ html {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #000000;
+  object-position: center 10%;
+  transform: scale(0.95);
+  transition: transform 0.5s ease;
   position: relative;
   z-index: 2;
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1);
 }
 
 .btn {
@@ -492,12 +508,12 @@ html {
   backdrop-filter: blur(4px);
   border-radius: 1rem;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: all 0.2s;
   border: 1px solid #171717;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(.5);
 }
 
 .project-card img {
