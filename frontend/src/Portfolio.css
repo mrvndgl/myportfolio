@@ -95,7 +95,7 @@ html {
 }
 
 .nav-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   color: #d1d5db;
   text-decoration: none;
   text-transform: capitalize;
@@ -356,6 +356,7 @@ html {
   cursor: pointer;
   border: none;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .btn-primary {
@@ -548,6 +549,7 @@ html {
   gap: 0.5rem;
   margin-bottom: 1rem;
   cursor: pointer;
+  font-weight: 300;
 }
 
 .tech-tag {

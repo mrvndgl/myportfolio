@@ -244,7 +244,7 @@ const Portfolio = () => {
         "A gamified food decision app UI in Figma that helps groups choose dining spots based on preferences, budget, and location.",
       image: "/samp-shakeeat.png",
       tech: ["Figma"],
-      demo: "https://www.figma.com/design/B9LP3r5AT9lKhWkOA0joh2/SHAKE-EAT?node-id=0-1&t=omLkoOI3sHUYNU3P-1",
+      demo: "https://www.figma.com/proto/B9LP3r5AT9lKhWkOA0joh2/SHAKE-EAT?node-id=110-775&p=f&t=c5ebz5FfhBoAkUsr-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=110%3A775&show-proto-sidebar=1",
     },
   ];
 
@@ -343,14 +343,14 @@ const Portfolio = () => {
               <button
                 onClick={() => scrollToSection("projects")}
                 className="btn btn-primary"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 View My Work
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="btn btn-outline"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 Get In Touch
               </button>
