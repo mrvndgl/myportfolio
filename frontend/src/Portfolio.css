@@ -424,7 +424,7 @@ html {
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
   color: #F4631E;
@@ -449,6 +449,7 @@ html {
 
 .about-text p {
   font-size: 1.125rem;
+  font-weight: 200;
   color: #d1d5db;
   line-height: 1.7;
 }
@@ -528,7 +529,7 @@ html {
 
 .project-content h3 {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #d1d5db;
   margin-bottom: 0.75rem;
 }
@@ -538,6 +539,7 @@ html {
   font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  font-weight: 200;
 }
 
 .tech-tags {
@@ -638,6 +640,7 @@ html {
 
 .contact-description {
   font-size: 1.25rem;
+  font-weight: 200;
   color: #d1d5db;
   margin-bottom: 3rem;
   max-width: 55rem;
@@ -656,6 +659,7 @@ html {
 .footer {
   padding: 2rem 0;
   text-align: center;
+  font-weight: 200;
   color: #9ca3af;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -673,6 +677,7 @@ html {
 
   .hero-subtitle {
     font-size: 1.5rem;
+    font-weight: 200;
   }
 }
 
