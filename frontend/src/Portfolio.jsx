@@ -337,7 +337,7 @@ const Portfolio = () => {
             </h1>
             <p className="hero-subtitle">
               Junior Web Developer & UI/UX Enthusiast building meaningful and
-              user-friendly digital experiences
+              user-friendly digital experiences.
             </p>
             <div className="hero-buttons" ref={heroButtonsRef}>
               <button
