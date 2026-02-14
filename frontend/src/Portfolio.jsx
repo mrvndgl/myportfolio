@@ -276,7 +276,7 @@ const Portfolio = () => {
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
-          <div className="logo">John Marvin Digal</div>
+          <div className="logo">JOHN MARVIN DIGAL</div>
 
           {/* Desktop Navigation */}
           <ul className="nav-links">
@@ -376,7 +376,7 @@ const Portfolio = () => {
               padding: 0,
             }}
           >
-            <ChevronDown size={32} color="#F4631E" />
+            <ChevronDown size={28} color="#F4631E" />
           </button>
         </div>
       </section>
